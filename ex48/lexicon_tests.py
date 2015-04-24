@@ -63,6 +63,6 @@ def test_errors():
 test_directions()
 test_verbs()
 test_stops()
-# test_nouns()
+test_nouns()
 # test_numbers()
 # test_errors()

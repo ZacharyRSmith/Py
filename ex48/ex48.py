@@ -5,6 +5,7 @@ class lexicon(object):
                       'right', 'back']
         verbs      = ['go', 'stop', 'kill', 'eat']
         stops      = ['the', 'in', 'of', 'from', 'at', 'it']
+        nouns      = ['door', 'bear', 'princess', 'cabinet']
         words = usr_in.split()
         for word in words:
             if word in directions:
@@ -13,6 +14,8 @@ class lexicon(object):
                 rslt.append(('verb', word))
             elif word in stops:
                 rslt.append(('stop', word))
+            elif word in nouns:
+                rslt.append(('noun', word))
             else:
                 # FIXME Try int
                 rslt.append(('N/A', word))
