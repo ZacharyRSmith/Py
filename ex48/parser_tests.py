@@ -107,6 +107,13 @@ test_parse_subject()
 #     else:
 #         raise ParserError("Expected a verb next.")
 
+def test_parse_verb():
+    assert_equal(parse_verb([('stop', 'My'), ('verb', 'move')]),
+                 ('verb', 'move'))
+
+print "#test_parse_verb():"
+test_parse_verb()
+
 # def parse_verb(word_list):
 #     skip(word_list, 'stop')
 
