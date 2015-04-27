@@ -45,6 +45,15 @@ test_match()
 #     else:
 #         return None
 
+def test_parse_object():
+    assert_equal(parse_object([('stop', 'Ummm'), ('noun', 'Chicken!')]),
+                              ('noun', 'Chicken!'))
+    assert_equal(parse_object([('stop', 'Ummm'), ('direction', 'North!')]),
+                              ('direction', 'North!'))
+
+print "#test_parse_object():"
+test_parse_object()
+
 # def parse_object(word_list):
 #     skip(word_list, 'stop')
 #     next_word = peek(word_list)
