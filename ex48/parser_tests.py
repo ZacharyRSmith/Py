@@ -15,7 +15,7 @@ def test_sentence():
     assert_equal(sentence.verb, 'hate')
     assert_equal(sentence.object, 'pepperoni')
 
-print "#test_sentence:"
+print "#test_sentence():"
 test_sentence()
 
 # class Sentence(object):
@@ -25,6 +25,14 @@ test_sentence()
 #         self.subject = subject[1]
 #         self.verb = verb[1]
 #         self.object = obj[1]
+
+def test_match():
+    assert_equal(match([('noun', 'Chicken!')], 'noun'), ('noun', 'Chicken!'))
+    assert_equal(match([('noun', 'Chicken!')], 'GOLD'), None)
+    assert_equal(match(None, 'GOLD'), None)
+
+print "#test_match():"
+test_match()
 
 # def match(word_list, expecting):
 #     if word_list:
