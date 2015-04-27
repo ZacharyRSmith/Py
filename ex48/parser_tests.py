@@ -122,6 +122,13 @@ test_parse_verb()
 #     else:
 #         raise ParserError("Expected a verb next.")
 
+def test_peek():
+    assert_equal(peek([('noun', 'Chicken!')]), 'noun')
+    assert_equal(peek(None), None)
+
+print "#test_peek():"
+test_peek()
+
 # def peek(word_list):
 #     if word_list:
 #         word = word_list[0]
