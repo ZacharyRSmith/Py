@@ -46,9 +46,9 @@ test_match()
 #         return None
 
 def test_parse_object():
-    assert_equal(parse_object([('stop', 'Ummm'), ('noun', 'Chicken!')]),
+    assert_equal(parse_object([('stop', 'The'), ('noun', 'Chicken!')]),
                               ('noun', 'Chicken!'))
-    assert_equal(parse_object([('stop', 'Ummm'), ('direction', 'North!')]),
+    assert_equal(parse_object([('stop', 'The'), ('direction', 'North!')]),
                               ('direction', 'North!'))
 
 print "#test_parse_object():"
@@ -86,6 +86,15 @@ test_parse_sentence()
 #     obj = parse_object(word_list)
 
 #     return Sentence(subj, verb, obj)
+
+def test_parse_subject():
+    assert_equal(parse_subject([('stop', 'The'), ('noun', 'chicken')]),
+                               ('noun', 'chicken'))
+    assert_equal(parse_subject([('verb', 'move')]),
+                               ('noun', 'player'))
+
+print "#test_parse_subject():"
+test_parse_subject()
 
 # def parse_subject(word_list):
 #     skip(word_list, 'stop')
