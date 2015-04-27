@@ -65,6 +65,21 @@ test_parse_object()
 #     else:
 #         raise ParserError("Expected a noun or direction next.")
 
+def test_parse_sentence():
+    sentence = parse_sentence([('verb', 'run'), ('direction', 'north')])
+    assert_equal(sentence.subject, 'player')
+    assert_equal(sentence.verb,    'run')
+    assert_equal(sentence.object,  'north')
+
+    sentence = parse_sentence([('noun', 'bear'), ('verb', 'eat'),
+                               ('stop', 'the'), ('noun', 'honey')])
+    assert_equal(sentence.subject, 'bear')
+    assert_equal(sentence.verb,    'eat')
+    assert_equal(sentence.object,  'honey')
+
+print "#test_parse_sentence():"
+test_parse_sentence()
+
 # def parse_sentence(word_list):
 #     subj = parse_subject(word_list)
 #     verb = parse_verb(word_list)
