@@ -4,7 +4,7 @@ class ParserError(Exception):
 class Sentence(object):
 
     def __init__(self, subject, verb, obj):
-        # remember we take ('noun','princess') tuples and convert them
+        # remember we take ('word_type','word') tuples and convert them
         self.subject = subject[1]
         self.verb = verb[1]
         self.object = obj[1]
@@ -67,36 +67,3 @@ def peek(word_list):
 def skip(word_list, word_type):
     while peek(word_list) == word_type:
         match(word_list, word_type)
-
-# class Parser(Object):
-#     def match(tup):
-#         if tup[0] in []
-
-#     def parse(lst):
-#         sentence = Sentence()
-#         first_tup_is_noun = None
-#         for tup in lst:
-
-#             if tup[0] == 'stop' or tup[0] == 'error':
-#                 next
-#             elif tup[0] == 'noun':
-
-#                 if first_tup_is_noun == NONE:
-#                     first_tup_is_noun = TRUE
-                    
-#                 else:
-                    
-
-#             elif tup[0] == 'verb':
-
-#                 if first_tup_is_noun == NONE:
-#                     first_tup_is_noun = FALSE
-
-#             else: # tup[0] == 'direction'
-                
-
-#     def peek():
-#         pass
-
-#     def skip():
-#         pass
